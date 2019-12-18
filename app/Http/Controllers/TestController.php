@@ -11,14 +11,15 @@ class TestController extends Controller
         $a->setName('Vladimir');
         $a->setAge(33);
         $a->setSex(true);
-        return $a->getOne();
+        return response()->json($a->getOne());
     }
     public function  setOne (request $request) {
         $a = new TestOne();
         $a->setName($request->get('name'));
         $a->setAge($request->get('age'));
         $a->setSex($request->get('sex'));
-        return $a->getOne();
+        //$b=;
+        return response()->json($a->getOne());
     }
 }
 
