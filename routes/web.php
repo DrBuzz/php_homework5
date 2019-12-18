@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test/one', 'TestController@getOne');
 
-Route::post('/test/one', 'TestController@setOne');
+Route::group(['prefix'=>'/test'],function () {
+    Route::get('/one', 'TestController@getOne');
+    Route::post('/one', 'TestController@setOne');
+});
